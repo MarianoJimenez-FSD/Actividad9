@@ -1,1 +1,54 @@
+### El API está levantada
 http://localhost:3000/
+
+
+###############
+### AUTORES ###
+###############
+
+### AUTORES --> GET (recogemos autor)
+http://localhost:3000/api/autores/
+
+### AUTORES --> GET (recogemos todos -paginado-)
+http://localhost:3000/api/autores/?page=2&limit=20
+
+### AUTORES --> GET (recogemos un autor concreto por id)
+http://localhost:3000/api/autores/3
+
+### AUTORES --> POST (dar de alta un autor)
+POST http://localhost:3000/api/autores/
+Content-Type: application/json
+
+{
+    "nombre": "Nombre del autor",
+    "email": "autor@gmail.com",
+    "imagen": "imagen.jpg"
+}
+
+
+#############
+### POSTS ###
+#############
+### POSTS --> GET (recogemos todos)
+http://localhost:3000/api/posts/
+
+### POSTS --> GET (recogemos todos -paginado-)
+http://localhost:3000/api/posts/?page=2&limit=20
+
+### POSTS --> GET (recogemos un post concreto por id)
+http://localhost:3000/api/posts/3
+
+### POSTS --> GET (recogemos los posts de un autor)
+http://localhost:3000/api/posts/autor/3
+
+### POSTS --> POST (dar de alta un post)
+POST http://localhost:3000/api/posts/
+Content-Type: application/json
+
+{
+    "titulo": "Título del post",
+    "descripcion": "Descripción del post",
+    "fecha_creacion": "2022-10-31",
+    "categoria": "Categoría del post",
+    "autorId": 1
+}
