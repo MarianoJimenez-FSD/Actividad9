@@ -10,10 +10,10 @@ http://localhost:3000/
 http://localhost:3000/api/autores/
 
 ### AUTORES --> GET (recogemos todos -paginado-)
-http://localhost:3000/api/autores/?page=2&limit=20
+http://localhost:3000/api/autores/?page=2&limit=2
 
 ### AUTORES --> GET (recogemos un autor concreto por id)
-http://localhost:3000/api/autores/3
+http://localhost:3000/api/autores/2
 
 ### AUTORES --> POST (dar de alta un autor)
 POST http://localhost:3000/api/autores/
@@ -29,11 +29,12 @@ Content-Type: application/json
 #############
 ### POSTS ###
 #############
+
 ### POSTS --> GET (recogemos todos)
 http://localhost:3000/api/posts/
 
 ### POSTS --> GET (recogemos todos -paginado-)
-http://localhost:3000/api/posts/?page=2&limit=20
+http://localhost:3000/api/posts/?page=2&limit=2
 
 ### POSTS --> GET (recogemos un post concreto por id)
 http://localhost:3000/api/posts/3
@@ -50,5 +51,5 @@ Content-Type: application/json
     "descripcion": "Descripción del post",
     "fecha_creacion": "2022-10-31",
     "categoria": "Categoría del post",
-    "autorId": 1
+    "autor_id": 1
 }

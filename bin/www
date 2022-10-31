@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+// Cargamos valores del fichero de entorno.
+require('dotenv').config();
+
+// Conexión a la base de datos BD
+//require('../config/db');
+
 /**
  * Module dependencies.
  */
@@ -7,9 +13,6 @@
 var app = require('../app');
 var debug = require('debug')('actividad9:server');
 var http = require('http');
-
-// Cargamos valores del fichero de entorno.
-require('dotenv').config();
 
 /**
  * Get port from environment and store in Express.
