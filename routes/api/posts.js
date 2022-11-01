@@ -1,5 +1,8 @@
 const router = require('express').Router();
+const { checkSchema } = require('express-validator');
+const { postValidationSchema } = require('../../helpers/validators/posts.validator');
 const { getAll, getByPage, getById, getByIdAutor, create } = require('../../models/posts.model');
+const { checkValidationsResult } = require('../../helpers/validator_utils');
 
 // Recuperamos todos los posts (o la página indicada por parámetros).
 router.get(
@@ -63,6 +66,8 @@ router.get(
 // Inserción de un post.
 router.post(
     '/', 
+    checkSchema(postValidationSchema),
+    checkValidationsResult,
     async (req, res) => {
         try {
             const result = await create(req.body);

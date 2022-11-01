@@ -19,7 +19,7 @@ const getById = (idPost) => {
 }
 
 const getByIdAutor = (idAutor) => {
-    return executeQueryOne(`select ${join_columns} from ${join_from} where (autores_id = ?)`, [ idAutor ]);
+    return executeQuery(`select ${join_columns} from ${join_from} where (autores_id = ?)`, [ idAutor ]);
 }
 
 const create = ({ titulo, descripcion, fecha_creacion, categoria, autor_id }) => {

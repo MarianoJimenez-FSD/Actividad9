@@ -1,4 +1,8 @@
 const router = require('express').Router();
+const { checkSchema } = require('express-validator');
+const { autorValidationSchema } = require('../../helpers/validators/autores.validator');
+const { checkValidationsResult } = require('../../helpers/validator_utils');
+
 const { getAll, getByPage, getById, create } = require('../../models/autores.model');
 
 // Recuperamos todos los autores (o la página indicada por parámetros).
@@ -18,9 +22,7 @@ router.get(
             
             res.json(autores);
         } catch (error) {            
-            console.log(error); // --> Habría que volcarlo a fichero de log.
-            res.status(500)
-               .json({ errorMessage: error.message });
+            manageError(res, error);
         }
     }
 );
@@ -41,9 +43,7 @@ router.get(
                    .json({ errorMessage: 'No existe un autor con ese Id' });
             }
         } catch (error) {            
-            console.log(error); // --> Habría que volcarlo a fichero de log.
-            res.status(500)
-               .json({ errorMessage: error.message });
+            manageError(res, error);
         }
     }
 );
@@ -51,17 +51,24 @@ router.get(
 // Inserción de un autor.
 router.post(
     '/', 
+    checkSchema(autorValidationSchema),
+    checkValidationsResult,
     async (req, res) => {
+        console.log(autorValidationSchema);
         try {
             const result = await create(req.body);
             const autor  = await getById(result.insertId);
             res.json(autor);
         } catch (error) {
-            console.log(error); // --> Habría que volcarlo a fichero de log.
-            res.status(500)
-               .json({ errorMessage: error.message });
+            manageError(res, error);
         }
     }
 );
+
+const manageError = (res, error) => {
+    console.log(error); // --> Habría que volcarlo a fichero de log.
+    res.status(500)
+       .json({ errorMessage: error.message });
+}
 
 module.exports = router;
