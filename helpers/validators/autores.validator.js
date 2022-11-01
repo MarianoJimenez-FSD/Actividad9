@@ -27,7 +27,7 @@ const autorValidationSchema = {
             errorMessage: getErrorFieldStr(ErrorType.ERROR_MANDATORY_FIELD, 'imagen')
         },
         isURL: {
-            errorMessage: getErrorFieldStr(ErrorType.ERROR_URL_FIELD, 'email')
+            errorMessage: getErrorFieldStr(ErrorType.ERROR_URL_FIELD, 'image')
         },
         isLength: {
             options: { max: 50 },
