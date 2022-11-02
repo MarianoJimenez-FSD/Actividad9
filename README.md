@@ -3,6 +3,16 @@ Actividad 9 en el Máster en Full Stack Developer de la UNIR. Diseño de API con
 
 Este proyecto se ha generado con [Express](https://github.com/expressjs/express) version 4.16.1.
 
-## Development server
+## Implementación en el servidor
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Deberá crear el fichero .env en la carpeta donde coloque el proyecto. Este fichero tiene las entradas:
+
+PORT=3000                   --> Puerto donde escuchará el servidor (esta entrada es opcional - valor por defecto 3000 -)
+
+DB_HOST="db_host"           --> Host donde está la base de datos
+DB_USER="db_user"           --> Usuario de conexión a la base de datos
+DB_PASSWORD="db_password"   --> Clave del usuario para conectar a la base de datos
+DB_PORT=3306                --> Puerto en el que escucha el servidor de base de datos
+DB_DATABASE="db_name"       --> Nombre de labase de datos
+
+Ejecute `ng start` para arrancar el servidor. Una vez arrancado el servidor, puede consultar la documentación del API en http://localhost:3000/api-docs/.
