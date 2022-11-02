@@ -18,4 +18,4 @@ Deberá crear el fichero .env en la carpeta donde coloque el proyecto. Este fich
 
 Ejecute `ng start` para arrancar el servidor. Una vez arrancado el servidor, puede consultar la documentación del API en http://localhost:3000/api-docs/.
 
-Junto al código fuente tiene el fichero Actividad9_Dump20221102.sql con una copia de la base de datos con la que empezar a probar.
+Junto al código fuente, tiene el fichero Actividad9_Dump20221102.sql con una copia de la base de datos con la que empezar a probar.
