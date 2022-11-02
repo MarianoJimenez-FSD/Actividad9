@@ -16,6 +16,6 @@ Deberá crear el fichero .env en la carpeta donde coloque el proyecto. Este fich
 | DB_PORT=3306 | Puerto en el que escucha el servidor de base de datos |
 | DB_DATABASE="db_name" | Nombre de la base de datos |
 
-Ejecute `ng start` para arrancar el servidor. Una vez arrancado el servidor, puede consultar la documentación del API en http://localhost:3000/api-docs/.
+Ejecute `npm start` para arrancar el servidor. Una vez arrancado el servidor, puede consultar la documentación del API en http://localhost:3000/api-docs/.
 
 Junto al código fuente, tiene el fichero Actividad9_Dump20221102.sql con una copia de la base de datos con la que empezar a probar.
