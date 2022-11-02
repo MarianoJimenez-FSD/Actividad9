@@ -126,15 +126,15 @@ const { getAll, getByPage, getById, create } = require('../../models/autores.mod
  *        nombre:
  *          type: string
  *          description: Nombre del autor
- *          example: Mariano Frías del Pozo
+ *          example: "Mariano Frías del Pozo"
  *        email:
  *          type: string
  *          description: Correo electrónico del autor
- *          example: mfrias@gmail.com
+ *          example: "mfrias@gmail.com"
  *        imagen:
  *          type: string
  *          description: URL de la imagen asociada al autor
- *          example: https://picsum.photos/200
+ *          example: "https://picsum.photos/200"
  *    error:
  *      title: Error
  *      description: Error producido al tratar una petición
@@ -143,7 +143,7 @@ const { getAll, getByPage, getById, create } = require('../../models/autores.mod
  *        errorMessage:
  *          type: string
  *          description: Descripción del error que se ha producido
- *          example: No existe un autor con ese Id
+ *          example: "No existe un autor con ese Id"
  *    errorValidation:
  *      title: Error validación
  *      description: Error detectado al validar algún campo de la petición
@@ -152,21 +152,22 @@ const { getAll, getByPage, getById, create } = require('../../models/autores.mod
  *        value:
  *          type: string
  *          description: Valor enviado en el campo/parámetro
- *          example: mfriasmar@gmail
+ *          example: "mfriasmar@gmail"
  *        msg:
  *          type: string
  *          description: El campo email no es un correo electrónico válido
- *          example: mfriasmar@gmail
+ *          example: "mfriasmar@gmail"
  *        param:
  *          type: string
  *          description: Nombre del campo/parámetro con el error
- *          example: email
+ *          example: "email"
  *        location: 
  *          type: string
  *          description: Lugar dónde se encuentra el parámetro
- *          example: body
+ *          example: "body"
  */
 
+// Recuperamos todos los autores, o de manera paginada.
 router.get(
     '/', 
     async (req, res) => {        
