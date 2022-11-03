@@ -43,7 +43,7 @@ const { checkValidationsResult } = require('../../helpers/validator_utils');
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/post'
+ *             $ref: '#/components/schemas/postAlta'
  *     responses:
  *       200:
  *         description: Objeto con el post dado de alta en el sistema. La respuesta tendrá el campo id asignado al post.
@@ -149,7 +149,7 @@ const { checkValidationsResult } = require('../../helpers/validator_utils');
  *          description: Categoría asignada al post
  *          example: "News"
  *        autor_id:
- *          type: string
+ *          type: integer
  *          description: Identificador del autor que creó el post
  *          example: 1
  *        nombre:
@@ -164,6 +164,31 @@ const { checkValidationsResult } = require('../../helpers/validator_utils');
  *          type: string
  *          description: URL de la imagen asociada al autor del post
  *          example: "https://picsum.photos/200"
+ *    postAlta:
+ *      title: PostAlta
+ *      description: Datos de un post a enviar en el momento de darlo de alta en el sistema
+ *      type: object
+ *      properties:
+ *        titulo:
+ *          type: string
+ *          description: Título del post
+ *          example: "OpenSSL November Security Release"
+ *        descripcion:
+ *          type: string
+ *          description: Descripción del post
+ *          example: "The Node.js project may be releasing new versions across all of its supported release lines in the first week of November to incorporate upstream patches from OpenSSL. Please read on for full details."
+ *        fecha_creacion:
+ *          type: string
+ *          description: Fecha de creación del post en formato ISO 8601
+ *          example: "2022-10-31"
+ *        categoria:
+ *          type: string
+ *          description: Categoría asignada al post
+ *          example: "News"
+ *        autor_id:
+ *          type: integer
+ *          description: Identificador del autor que creó el post
+ *          example: 1
  */
 
 // Recuperamos todos los posts (o la página indicada por parámetros).
